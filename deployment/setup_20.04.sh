@@ -9,7 +9,7 @@ set -eu -o errexit -o pipefail -o noclobber -o nounset
 
 # -allow a command to fail with !’s side effect on errexit
 # -use return value from ${PIPESTATUS[0]}, because ! hosed $?
-! getopt --test > /dev/null 
+! getopt --test > /dev/null
 if [[ ${PIPESTATUS[0]} -ne 4 ]]; then
     echo '`getopt --test` failed in this environment.'
     exit 1
@@ -331,7 +331,7 @@ function setup_chatwoot() {
   rvm install "ruby-3.0.4"
   rvm use 3.0.4 --default
 
-  git clone https://github.com/chatwoot/chatwoot.git
+  git clone https://github.com/nestordavalos/chatwoot.git
   cd chatwoot
   git checkout "$BRANCH"
   bundle
@@ -630,7 +630,7 @@ Management:
   -c, --console             Open ruby console
   -l, --logs                View logs from Chatwoot. Supported values include web/worker.
   -r, --restart             Restart Chatwoot server
-  
+
 Miscellaneous:
   -d, --debug               Show debug messages
   -v, --version             Display version information
@@ -800,7 +800,7 @@ function main() {
   if [ "$c" == "y" ]; then
     get_console
   fi
-  
+
   if [ "$h" == "y" ]; then
     help
   fi
@@ -816,7 +816,7 @@ function main() {
   if [ "$r" == "y" ]; then
     restart
   fi
-  
+
   if [ "$s" == "y" ]; then
     ssl
   fi
